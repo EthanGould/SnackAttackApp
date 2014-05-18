@@ -1,0 +1,9 @@
+1) As a user, on the homepage I should be able to sign up for a new account, or sign in to my existing account.
+
+2) As a user, when I log in I should see the "snack generator", an option to view "my list" and a section that displayes nutritional information on a given snack.
+
+3) As a user when I click the "new" button on any given food type, I should be presented with a new snack suggestion of that food type.
+
+4) As a user when I am presented with a snack option and I click the "+" button on a food suggestion, that item should be added to "my list".
+
+5) As a user when I click on the "more info" button on a food suggestion, I should be able to see number of calories, protein and fat on that item.
