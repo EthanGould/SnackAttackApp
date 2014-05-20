@@ -2,7 +2,7 @@
 
 2) As a user, when I log in I should see the snack search bar
 
-3) When I search for a food, I should be presesnted with a list of options that match that food.
+3) When I search for a food, I should be presesnted with a list of foods that match my search.
 
 4) When I select a food from the options I should be able to see the nutritional value of that food.
 

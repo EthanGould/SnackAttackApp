@@ -7,7 +7,7 @@ gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-gem 'pry'
+gem 'pry-rails'
 
 gem 'httparty'
 # Use SCSS for stylesheets
