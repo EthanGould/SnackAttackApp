@@ -1,0 +1,12 @@
+<%= form_for :user_input_form, url: accept_user_input_path, method: :get do |f| %>
+  <%= f.text_field :user_input %>
+  <%= f.submit %>
+<% end %>
+
+<br>
+<br>
+<b>Params:</b> <%= params %><br>
+
+<br>
+<br>
+<b>HTTParty Result:</b> <%= render :partial => 'results' %>

@@ -1,9 +1,15 @@
 1) As a user on the homepage I should be able to sign up for a new account, or sign in to my existing account.
 
-2) As a user, when I log in I should see the snack search bar, a section to display returned search results, a blank "my list" and a section that will display nutritional information on a given snack.
+2) As a user, when I log in I should see the snack search bar
 
-3) As a user when I click the "+" button on a returned search item, it should be added to "my list".
+3) When I search for a food, I should be presesnted with a list of options that match that food.
 
-4) As a user when I click on a returned search item I should be able to see the number of calories, fat, carbohydrates and protein on that item.
+4) When I select a food from the options I should be able to see the nutritional value of that food.
 
-5) As a user when I log out, "my list" should be saved for later viewing and editing.
+5) I should see a blank shopping list
+
+6) As a user when I click the "+" button on a returned food option it should be added to my shopping list.
+
+7) As a user, I can clear my shopping list.
+
+8) As a user when I log out, the shopping list's cureent state should be saved for later viewing and editing.
