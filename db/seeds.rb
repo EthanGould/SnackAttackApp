@@ -1,2 +1,4 @@
-list1 = shopping_lists.create(name: 'breakfast', food: 'blueberry', status: 'development')
-list2 = shopping_lists.create(name: 'dinner', food: 'turkey', status: 'development')
+food = Food.create(name: 'apple')
+food = Food.create(name: 'orange')
+food = Food.create(name: 'cheese')
+food = Food.create(name: 'cracker')
