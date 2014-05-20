@@ -1,16 +1,36 @@
-.panel-footer, .panel-heading{
+
+.panel-heading{
   text-align: center;
+  font-size: 24px;
+  font-family: 'Playball', cursive;
 }
-.img-thumbnail{
-  min-height: 200px;
-  max-height: 200px;
-}
-.panel-body{
-  text-align: center;
-}
-#wrapper {
+.wrapper {
   overflow:auto;
-  max-height:120px;
+  height:300px;
+}
+.wrapper li{
+  font-size: 18px;
+  font-family: 'Playball', cursive;
+  list-style-type: none;
+  line-height: 35px;
+}
+.search{
+  text-align: center;
+}
+.search-results{
+  height: 300px;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 24px;
+  font-family: 'Playball', cursive;
+}
+.results{
+  float: right;
+}
+.img-circle{
+  height: 100px;
+  width: 120px;
+  margin-top: 100px
 }
 .header{
   margin: 0 0 0 15px;

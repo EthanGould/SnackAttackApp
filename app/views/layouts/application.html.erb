@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="snack_attack.css">
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class = "header">
@@ -17,7 +18,7 @@
 
   <div class="login">
     <% if user_signed_in? %>
-      Logged in as <%= current_user.email %>.
+      <p class="navbar-text">Signed in as <%= current_user.email %></p>
       <%= link_to 'Edit profile', edit_user_registration_path %> |
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <% else %>
