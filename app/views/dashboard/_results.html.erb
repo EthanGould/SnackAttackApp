@@ -1,7 +1,6 @@
 <ol>
-  <% @results.each do |result| %>
-    <li>
-      <%= result %>
-    </li>
+  <% @foods_array.each do |food| %>
+    <li><%= link_to food.name, food_path(food) %></li>
   <% end %>
 </ol>
+

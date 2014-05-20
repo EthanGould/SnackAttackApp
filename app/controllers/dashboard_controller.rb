@@ -2,9 +2,9 @@ class DashboardController < ApplicationController
 
   def index
     if params['user_input_form']
-      @results = call_api(search_params)
+      @foods_array = call_api(search_params)
     else
-      @results = []
+      @foods_array = []
     end
   end
 
@@ -21,7 +21,11 @@ class DashboardController < ApplicationController
       query = input_hash['user_input']
       api_url = "https://api.nutritionix.com/v1_1/search/#{query}?results=0:05&fields=item_name,brand_name,item_id,nf_calories,nf_carbohydrates,nf_protein,nf_carbs&appId=#{api_id}&appKey=#{api_key}"
       result_array = HTTParty.get(api_url)['hits']
-      result_array.map { |food_hash| food_hash['fields']['item_name'] }
+      result_array.map { |food_hash|
+      Food.create(name: food_hash['fields']['item_name'],
+      calories: food_hash['fields']['nf_calories'],
+      protein: food_hash['fields']['nf_protein'])
+        }
     end
   end
 

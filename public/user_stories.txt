@@ -4,6 +4,8 @@
 
 3) When I search for a food, I should be presesnted with a list of foods that match my search.
 
+4) Each listed food will be added to the Foods database
+
 4) When I select a food from the options I should be able to see the nutritional value of that food.
 
 5) I should see a blank shopping list
