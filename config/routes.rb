@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   post 'submit_user_input' => 'dashboard#submit'
 
   resources :foods
-  post '/shopping_lists/:id' => 'shopping_lists#update'
+  resources :shopping_lists
 end

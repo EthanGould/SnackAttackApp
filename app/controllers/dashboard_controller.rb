@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
 
   def index
+    @shopping_list = ShoppingList.first
     if params['user_input_form'].present? && params['user_input_form']['user_input'].present?
       #calls from the nutritionix model, returns a hash
       @api_response = Nutritionix.response(search_params['user_input'])
