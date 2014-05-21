@@ -1,0 +1,7 @@
+<h2>New Shopping List </h2>
+
+<%= form_for @shopping_list do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>

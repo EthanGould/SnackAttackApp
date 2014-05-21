@@ -1,6 +1,6 @@
 <ol>
   <% @foods_array.each do |food| %>
-    <li><%= link_to food.name, food_path(food) %></li>
+    <li><%= link_to food.name, food_path(food) %> | <%= button_to '+', [:update, @shopping_list, food] %></li>
   <% end %>
 </ol>
 

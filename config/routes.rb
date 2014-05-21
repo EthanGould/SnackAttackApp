@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post 'submit_user_input' => 'dashboard#submit'
 
   resources :foods
+  resources :shopping_lists
 end
