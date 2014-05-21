@@ -2,6 +2,12 @@ class DashboardController < ApplicationController
 
   def index
     @shopping_list = ShoppingList.first
+    #user startes with a shopping list if one isnt created yet
+    if current_user.shopping_list.nil?
+      @shopping_list = current_user.shopping_list.create(name: 'my list')
+    else
+      @shopping_list = current_user.shopping_list
+    end
     if params['user_input_form'].present? && params['user_input_form']['user_input'].present?
       #calls from the nutritionix model, returns a hash
       @api_response = Nutritionix.response(search_params['user_input'])
