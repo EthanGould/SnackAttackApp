@@ -1,10 +1,9 @@
 class DashboardController < ApplicationController
 
   def index
-    @shopping_list = ShoppingList.first
     #user startes with a shopping list if one isnt created yet
     if current_user.shopping_list.nil?
-      @shopping_list = current_user.shopping_list.create(name: 'my list')
+      @shopping_list = ShoppingList.create(user_id: current_user.id, name: 'my list')
     else
       @shopping_list = current_user.shopping_list
     end
