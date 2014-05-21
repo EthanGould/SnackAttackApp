@@ -1,8 +1,10 @@
 class DashboardController < ApplicationController
 
   def index
-    if params['user_input_form']
-      @foods_array = call_api(search_params)
+    if params['user_input_form'].present? && params['user_input_form']['user_input'].present?
+      #calls from the nutritionix model, returns a hash
+      @api_response = Nutritionix.response(search_params['user_input'])
+      @foods_array = save_response_to_db(@api_response['hits'])
     else
       @foods_array = []
     end
@@ -14,19 +16,12 @@ class DashboardController < ApplicationController
     params.require(:user_input_form).permit(:user_input)
   end
 
-  def call_api(input_hash)
-    if input_hash['user_input']
-      api_key = 'd8372703aeb94b7035ce12d07f61ba84'
-      api_id = 'ceadf6d2'
-      query = input_hash['user_input']
-      api_url = "https://api.nutritionix.com/v1_1/search/#{query}?results=0:05&fields=item_name,brand_name,item_id,nf_calories,nf_carbohydrates,nf_protein,nf_carbs&appId=#{api_id}&appKey=#{api_key}"
-      result_array = HTTParty.get(api_url)['hits']
-      result_array.map { |food_hash|
-      Food.create(name: food_hash['fields']['item_name'],
-      calories: food_hash['fields']['nf_calories'],
-      protein: food_hash['fields']['nf_protein'])
-        }
-    end
+  def save_response_to_db(result_array)
+    result_array.map { |food_hash|
+      tmp_food = Food.find_or_initialize_by(api_response_id: food_hash['fields']['item_id'])
+      tmp_food.update_attributes(name: food_hash['fields']['item_name'], calories: food_hash['fields']['nf_calories'], protein: food_hash['fields']['nf_protein'])
+      tmp_food
+    }
   end
 
 end

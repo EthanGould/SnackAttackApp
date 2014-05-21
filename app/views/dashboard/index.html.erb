@@ -1,12 +1,78 @@
-<%= form_for :user_input_form, url: accept_user_input_path, method: :get do |f| %>
-  <%= f.text_field :user_input %>
-  <%= f.submit %>
-<% end %>
+<div class= "row">
+  <div class="panel panel-default">
+    <div class="panel-heading">Snack Attack Control Panel</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="search">
+            <form class="navbar-form" role="search">
+              <%= form_for :user_input_form, url: accept_user_input_path, method: :get do |f| %>
+                <%= f.text_field :user_input %>
+                <%= f.submit 'Search Food' %>
+              <% end %>
+            </form>
+          </div>
+          <div class="col-md-4" "food-circle">
+            <img src="http://4.bp.blogspot.com/-Zrx6gR238nQ/UCDhEEzk4FI/AAAAAAAAAUI/Xc95-PWR9pg/s1600/tomato2.jpg" alt="tomato" class="img-circle" "tomato">
+          </div>
+          <div class="col-md-4" "food-circle">
+            <img src="http://www.fairtrasa.com/wp-content/uploads/2012/08/shutterstock_93825898-1024x713.jpeg" alt="kiwi" class="img-circle" "kiwi">
+          </div>
+          <div class="col-md-4" "food-circle">
+            <img src="http://www.baldorfood.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/h/shutterstock_86834578_1_.jpg" alt="grain" class="img-circle" "grain">
+          </div>
+        </div>
+        <div class="col-md-6" "results">
+          <div class="well search-results">
+            <h4>Results</h4>
+            <%= render :partial => 'results' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Your List</div>
+          <div class="panel-body">
+            <div class="well">
+              <div class="wrapper">
+                <ul>
+                  <li>Page 1</li>
+                  <li>Page 2</li>
+                  <li>Page 3</li>
+                  <li>Page 4</li>
+                  <li>Page 5</li>
+                  <li>Page 6</li>
+                  <li>Page 4</li>
+                  <li>Page 5</li>
+                  <li>Page 6</li>
+                  <li>Page 4</li>
+                  <li>Page 5</li>
+                  <li>Page 6</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="well">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>calories</th>
+                <th>protein</th>
+                <th>fat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <td> calories </td>
+              <td> protein </td>
+              <td> fat </td>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<br>
-<br>
-<b>Params:</b> <%= params %><br>
-
-<br>
-<br>
-<b>HTTParty Result:</b> <%= render :partial => 'results' %>
