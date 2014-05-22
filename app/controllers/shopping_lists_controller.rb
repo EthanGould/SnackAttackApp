@@ -22,9 +22,7 @@ class ShoppingListsController < ApplicationController
   end
 
   def update
-    # need to specify shopping_list_params?
     shopping_list = ShoppingList.find(params[:id])
-    #specify food_params? or just params?
     food = Food.find(params[:food_id])
     shopping_list.foods << food
     redirect_to accept_user_input_path
