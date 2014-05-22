@@ -30,6 +30,12 @@ class ShoppingListsController < ApplicationController
     redirect_to accept_user_input_path
   end
 
+  def destroy
+    shopping_list = ShoppingList.find(params[:id])
+    shopping_list.destroy
+    redirect_to root_path
+  end
+
   private
   def shopping_list_params
     params.require(:shopping_list).permit(:name)

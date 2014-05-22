@@ -31,7 +31,7 @@
       </div>
       <div class="col-md-6">
         <div class="panel panel-default">
-          <div class="panel-heading">Your List <%= link_to 'new list', new_shopping_list_path %><%= link_to 'clear list', shopping_list_path(@shopping_list) %></div>
+          <div class="panel-heading">Your List | <%= link_to 'new list', new_shopping_list_path %> | <%= link_to 'clear list', shopping_list_path(@shopping_list), method: :delete %></div>
           <div class="panel-body">
 
             <div class="well">
