@@ -6,9 +6,9 @@
         <div class="col-md-6">
           <div class="search">
             <form class="navbar-form" role="search">
-              <%= form_for :user_input_form, url: accept_user_input_path, method: :get do |f| %>
+              <%= form_for :user_input_form, url: accept_user_input_path ,method: :get do |f| %>
                 <%= f.text_field :user_input %>
-                <%= f.submit 'Search Food' %>
+                <%= f.submit 'Search Food' , class: "btn btn-info", role: "button"%>
               <% end %>
             </form>
           </div>
@@ -35,7 +35,7 @@
       </div>
       <div class="col-md-12">
         <div class="panel panel-default">
-          <div class="panel-heading">Your List | <%= link_to 'clear list', shopping_list_path(@shopping_list), method: :delete %><br>
+          <div class="panel-heading">Your List | <%= link_to 'clear list', shopping_list_path(@shopping_list), class: "btn btn-danger", role: "button" ,method: :delete %><br>
             <p>/calories/protein</p>
           </div>
           <div class="panel-body">
