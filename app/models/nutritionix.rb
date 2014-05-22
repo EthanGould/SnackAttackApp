@@ -1,5 +1,3 @@
-Dotenv.load
-
 class Nutritionix
 
   def self.response(query)
