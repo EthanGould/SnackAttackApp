@@ -29,39 +29,22 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="panel panel-default">
-          <div class="panel-heading">Your List | <%= link_to 'new list', new_shopping_list_path %> | <%= link_to 'clear list', shopping_list_path(@shopping_list), method: :delete %></div>
+          <div class="panel-heading">Your List | <%= link_to 'clear list', shopping_list_path(@shopping_list), method: :delete %><br>
+            <p>|calories|protein|fat</p>
+          </div>
           <div class="panel-body">
-
             <div class="well">
               <div class="wrapper">
                 <ul>
-                <% @shopping_list.foods.each do |food| %>
-                  <li><%= link_to food.name, food_path(food) %></li>
-                <% end %>
+                  <% @shopping_list.foods.each do |food| %>
+                    <li><%= link_to food.name, food_path(food) %> | <%= food.calories%> | <%= food.protein %> | <%= food.fat %></li>
+                  <% end %>
                 </ul>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="well">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>calories</th>
-                <th>protein</th>
-                <th>fat</th>
-              </tr>
-            </thead>
-            <tbody>
-              <td> calories </td>
-              <td> protein </td>
-              <td> fat </td>
-            </tbody>
-          </table>
         </div>
       </div>
     </div>
