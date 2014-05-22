@@ -33,10 +33,13 @@
         <div class="panel panel-default">
           <div class="panel-heading">Your List <%= link_to 'new list', new_shopping_list_path %></div>
           <div class="panel-body">
+
             <div class="well">
               <div class="wrapper">
                 <ul>
-                  <li>Page 1</li>
+                <% @shopping_list.foods.each do |food| %>
+                  <li><%= link_to food.name, food_path(food) %></li>
+                <% end %>
                 </ul>
               </div>
             </div>
