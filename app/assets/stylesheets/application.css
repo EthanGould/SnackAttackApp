@@ -25,18 +25,14 @@
   text-align: center;
   text-decoration: underline;
   font-size: 20px;
-  font-family: 'Playball', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
   overflow:auto;
   height:300px;
-}
-.results{
-  float: right;
 }
 .search-results ul{
   list-style-type: none;
 }
 .search-results li{
-  height: 70px ;
   list-style-image: url('http://media-cache-ec0.pinimg.com/favicons/1450e8f37f09feae18eb1c2349cbb0da4a1e1465cc0f269d0f525fa5.png?9719527d0912333852e680f2e237a9d6');
 }
 .img-circle{
