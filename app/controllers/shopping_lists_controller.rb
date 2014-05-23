@@ -10,7 +10,7 @@ class ShoppingListsController < ApplicationController
     @shopping_list = @user.shopping_lists.new(name: shopping_list_params[:name], user: current_user)
     if @shopping_list.save
       flash[:notice] = "Successfully created new shoppinglist"
-      redirect_to accept_user_input_path
+      redirect_to root_path
     else
       flash.now[:alert] = @shopping_list.errors.full_messages
       render :new
@@ -20,7 +20,7 @@ class ShoppingListsController < ApplicationController
   def update
     food = Food.find(params[:food_id])
     @shopping_list.foods << food
-    redirect_to accept_user_input_path
+    redirect_to root_path
   end
 
   def destroy
