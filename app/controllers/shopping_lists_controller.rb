@@ -1,5 +1,5 @@
 class ShoppingListsController < ApplicationController
-
+  before_action :set_shopping_list, only: [:show, :update, :destroy]
 
   def new
     @shopping_list = ShoppingList.new
@@ -17,24 +17,23 @@ class ShoppingListsController < ApplicationController
     end
   end
 
-  def show
-    @shopping_list = ShoppingList.find(params[:id])
-  end
-
   def update
-    shopping_list = ShoppingList.find(params[:id])
     food = Food.find(params[:food_id])
-    shopping_list.foods << food
+    @shopping_list.foods << food
     redirect_to accept_user_input_path
   end
 
   def destroy
-    shopping_list = ShoppingList.find(params[:id])
-    shopping_list.destroy
+    @shopping_list.destroy
     redirect_to root_path
   end
 
   private
+
+  def set_shopping_list
+    @shopping_list = ShoppingList.find(params[:id])
+  end
+
   def shopping_list_params
     params.require(:shopping_list).permit(:name)
   end
