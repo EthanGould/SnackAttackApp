@@ -3,7 +3,7 @@
     <div class="panel-heading">Snack Attack Control Panel</div>
     <div class="panel-body">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="search">
             <form class="navbar-form" role="search">
               <%= form_for :user_input_form, url: accept_user_input_path ,method: :get do |f| %>
@@ -22,7 +22,7 @@
             <img src="http://www.baldorfood.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/h/shutterstock_86834578_1_.jpg" alt="grain" class="img-circle" "grain">
           </div>
         </div>
-        <div class="col-md-6" "results">
+        <div class="col-md-7" "results">
           <div class="panel panel-default">
             <div class="panel-heading">Results</div>
             <div class="panel-body">
@@ -35,7 +35,7 @@
       </div>
       <div class="col-md-12">
         <div class="panel panel-default">
-          <div class="panel-heading">Your List | <%= link_to 'clear list', shopping_list_path(@shopping_list), class: "btn btn-danger", role: "button" ,method: :delete %><br>
+          <div class="panel-heading">Your List <%= link_to 'clear list', shopping_list_path(@shopping_list), class: "btn btn-danger", role: "button" ,method: :delete %><br>
             <p>/calories/protein</p>
           </div>
           <div class="panel-body">
