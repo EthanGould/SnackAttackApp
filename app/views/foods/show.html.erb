@@ -1,7 +1,6 @@
-<h2>Delicious Food</h2>
-
-<%= @food.name %><br>
-Calories | <%= @food.calories %><br>
-Protein | <%= @food.protein %><br>
-
-<%= link_to 'Back', accept_user_input_path %>
+<h2><%= @food.name %></h2>
+<br>
+<b>Calories</b> | <%= @food.calories %><br>
+<b>Protein</b> | <%= @food.protein %>
+<br>
+<%= link_to 'Back', accept_user_input_path, id: "back-btn", class: "btn btn-default", role: "button" %>
