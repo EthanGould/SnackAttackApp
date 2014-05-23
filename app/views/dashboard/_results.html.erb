@@ -1,5 +1,5 @@
 <ul>
-  <% @foods_array.each do |food| %>
+  <% @foods.each do |food| %>
     <li><%= link_to food.name, food_path(food) %><%= button_to 'add to my list',  food_shopping_list_food_relations_path(food) , class: "btn btn-success btn-xs", role: "button" %></li>
   <% end %>
 </ul>
