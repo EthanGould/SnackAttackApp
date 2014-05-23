@@ -1,4 +1,4 @@
-# Snack Attack
+# Snack Attack!
 
 By [Ethan Gould](https://www.github.com/EthanGould)
 
